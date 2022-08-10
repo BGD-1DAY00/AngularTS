@@ -1,0 +1,18 @@
+
+<form [formGroup]="threadForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Title:</label>
+        <input *ngIf="!editing; else elseBlock"  formControlName="title" ngModel type="text">
+        <ng-template  #elseBlock>
+            <input formControlName='title' placeholder="{{message.message.title}}" ngModel type="text">
+        </ng-template>
+    </div>
+    <div>
+        <label>Content:</label>
+        <input *ngIf="!editing; else elseBlock2" formControlName="content" ngModel  type="text">
+        <ng-template #elseBlock2>
+            <input formControlName='content' placeholder="{{message.message.content}}"  ngModel type="text">
+        </ng-template>
+    </div>
+    <button type="submit">Submit</button>
+</form>

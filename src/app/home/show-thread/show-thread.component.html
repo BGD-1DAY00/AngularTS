@@ -1,0 +1,6 @@
+<div *ngFor="let item of allThreads">
+    <p>Title: {{item.title}}</p>
+    <p>Content: {{item.content}}</p>
+    <button (click)="deleteThread(item)" *ngIf="currentUser.email === item.email">Delete</button>
+    <button (click)="editThread(item)" *ngIf="currentUser.email === item.email">Edit</button>
+</div>

@@ -1,0 +1,25 @@
+<p>Create Account</p>
+<button [routerLink] = "'/'">Go Home</button>
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <div>
+        <label>Name:</label>
+        <input name="name" type="text" ngModel required>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input name="password" type="password" ngModel>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input name="email" type="text" ngModel>
+    </div>
+    <button type="submit">Submit</button>
+    <button (click)="reset()">Reset</button>
+</form>
+
+<p *ngIf="userSignIn===true">Successfull Sign In</p>
+<p *ngIf="userSignIn===false">User Already Exists! Please Log In</p>
+
+
+

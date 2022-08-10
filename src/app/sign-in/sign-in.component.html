@@ -1,0 +1,23 @@
+<h3>Sign In</h3>
+
+<button [routerLink] = "'/'">Go Home</button>
+
+<form [formGroup]="userForm" (ngSubmit)="submit()">
+    <div>
+        <label>Name:</label>
+        <input formControlName="name" type="text" ngModel required>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input formControlName="password" type="password" ngModel>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input formControlName="email" type="text" ngModel>
+    </div>
+    <button type="submit">Submit</button>
+    <!-- <button (click)="reset()">Reset</button> -->
+</form>
+
+<p *ngIf="userSignIn===true">Successfull Sign In</p>
+<p *ngIf="userSignIn===false">Bad Sign In</p>
